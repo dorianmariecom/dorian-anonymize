@@ -1,13 +1,13 @@
-# `dorian-anonymize-yaml`
+# `dorian-anonymize`
 
-Anonymize YAML files
+Anonymize strings
 
-e.g. `anonymize-yaml spec/**/*.yml`
+e.g. `anonymize mySecret1234`
 
 ### Install
 
 ```bash
-gem install dorian-anonymize-yaml
+gem install dorian-anonymize
 ```
 
 Or as part of my other gems:
@@ -19,5 +19,6 @@ gem install dorian
 ### Usage
 
 ```bash
-git ls-files spec | grep "\.yml\$" | xargs anonymize-yaml
+echo MySecret1234 | anonymize
+AaAaaaaa0000
 ```
