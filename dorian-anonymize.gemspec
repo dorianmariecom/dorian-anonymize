@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = "dorian-anonymize"
-  s.version = "0.1.1"
+  s.version = "0.1.2"
   s.summary = "Anonymize strings"
   s.description = "#{s.summary}\n\ne.g. `anonymize mySecret1234`"
   s.authors = ["Dorian Marié"]
@@ -12,4 +12,6 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/dorianmariecom/anonymize"
   s.license = "MIT"
   s.metadata = { "rubygems_mfa_required" => "true" }
+
+  s.required_ruby_version = ">= 3.3.0"
 end
