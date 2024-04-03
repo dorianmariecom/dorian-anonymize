@@ -9,9 +9,7 @@ end
 
 inputs = ARGV
 
-if inputs.empty?
-  inputs = $stdin.each_line.to_a
-end
+inputs = $stdin.each_line.to_a if inputs.empty?
 
 inputs.each do |input|
   puts input.to_s.gsub(/[0-9]/, "0").gsub(/[a-z]/, "a").gsub(/[A-Z]/, "A")
