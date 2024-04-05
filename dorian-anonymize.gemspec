@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email = "dorian@dorianmarie.com"
   s.files = ["bin/anonymize"]
   s.executables << "anonymize"
-  s.homepage = "https://github.com/dorianmariecom/anonymize"
+  s.homepage = "https://github.com/dorianmariecom/dorian-anonymize"
   s.license = "MIT"
   s.metadata = { "rubygems_mfa_required" => "true" }
 
