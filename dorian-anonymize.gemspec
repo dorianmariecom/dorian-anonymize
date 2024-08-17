@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.name = "dorian-anonymize"
   s.version = "0.2.1"
-  s.summary = "Anonymize strings"
+  s.summary = "anonymize strings"
   s.description = "#{s.summary}\n\ne.g. `anonymize mySecret1234`"
   s.authors = ["Dorian Marié"]
   s.email = "dorian@dorianmarie.com"
