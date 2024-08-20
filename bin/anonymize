@@ -10,7 +10,7 @@ if parsed.options.version
   abort File.read(File.expand_path("../../VERSION", __FILE__))
 end
 
-inputs = parsed.arguments
+inputs = parsed.arguments + parsed.files.map { |file| File.read(file) }
 inputs = $stdin.each_line.to_a.map(&:strip) if inputs.empty?
 
 inputs.each do |input|
