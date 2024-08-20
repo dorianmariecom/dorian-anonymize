@@ -1,15 +1,23 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-if ARGV[0] == "--help" || ARGV[0] == "-h"
-  puts "USAGE: anonymize STRINGS..."
-  puts "USAGE: ... | anonymize"
-  exit
-end
+require "dorian/arguments"
 
-inputs = ARGV
+parsed =
+  Dorian::Arguments.parse(
+    version: {
+      alias: :v
+    },
+    help: {
+      alias: :h
+    }
+  )
 
-inputs = $stdin.each_line.to_a if inputs.empty?
+abort parsed.help if parsed.options.help
+abort File.read(File.expand_path('../../VERSION', __FILE__)) if parsed.options.version
+
+inputs = parsed.arguments
+inputs = $stdin.each_line.to_a.map(&:strip) if inputs.empty?
 
 inputs.each do |input|
   puts input.to_s.gsub(/[0-9]/, "0").gsub(/[a-z]/, "a").gsub(/[A-Z]/, "A")
