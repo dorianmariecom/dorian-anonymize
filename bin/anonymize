@@ -3,18 +3,12 @@
 
 require "dorian/arguments"
 
-parsed =
-  Dorian::Arguments.parse(
-    version: {
-      alias: :v
-    },
-    help: {
-      alias: :h
-    }
-  )
+parsed = Dorian::Arguments.parse(version: { alias: :v }, help: { alias: :h })
 
 abort parsed.help if parsed.options.help
-abort File.read(File.expand_path('../../VERSION', __FILE__)) if parsed.options.version
+if parsed.options.version
+  abort File.read(File.expand_path("../../VERSION", __FILE__))
+end
 
 inputs = parsed.arguments
 inputs = $stdin.each_line.to_a.map(&:strip) if inputs.empty?
