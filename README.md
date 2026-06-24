@@ -1,24 +1,41 @@
 # `dorian-anonymize`
 
-Anonymize strings
+Anonymize strings by preserving character classes.
 
-e.g. `anonymize mySecret1234`
-
-### Install
+## Install
 
 ```bash
 gem install dorian-anonymize
 ```
 
-Or as part of my other gems:
+Also included in the aggregate gem:
 
 ```bash
 gem install dorian
 ```
 
-### Usage
+## Usage
 
 ```bash
-echo MySecret1234 | anonymize
-AaAaaaaa0000
+anonymize [string ...] [file ...]
+```
+
+Run `anonymize -h` for generated option details and `anonymize -v` for the installed version.
+
+## Notes
+
+- Uppercase letters become `A`, lowercase letters become `a`, and digits become `0`.
+
+## Examples
+
+### Anonymize a secret-looking value
+
+```bash
+anonymize Secret123
+```
+
+Output:
+
+```text
+Aaaaaa000
 ```
